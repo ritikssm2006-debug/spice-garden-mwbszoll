@@ -1,0 +1,263 @@
+/**
+ * Site settings, generated from the app's plan.
+ * Edit text, labels and fields here; the backend's models/ folder has the
+ * matching database fields.
+ */
+export const SITE = {
+  "name": "Spice Garden",
+  "tagline": "Fresh, authentic food made with love",
+  "description": "Restaurant",
+  "hero": {
+    "title": "Taste the tradition",
+    "subtitle": "Fresh dishes cooked every day from local ingredients. Dine in, take away, or book a table.",
+    "cta": "See the menu"
+  },
+  "features": [
+    {
+      "icon": "🍛",
+      "title": "Fresh every day",
+      "text": "Everything is cooked to order with seasonal ingredients."
+    },
+    {
+      "icon": "🌿",
+      "title": "Veg & non-veg",
+      "text": "A wide menu with clear vegetarian options."
+    },
+    {
+      "icon": "📅",
+      "title": "Easy booking",
+      "text": "Reserve your table online in under a minute."
+    }
+  ],
+  "about": "",
+  "contact": {
+    "email": "hello@spicegarden.example",
+    "phone": "+91 98765 43210",
+    "address": "12 MG Road, Bengaluru"
+  },
+  "currency": "₹",
+  "auth": true,
+  "owner": {
+    "name": "aryan",
+    "email": "aryanssm2006@gmail.com",
+    "phone": "+918002292427",
+    "upiId": "",
+    "payeeName": "",
+    "qrImage": ""
+  },
+  "acceptPayments": false,
+  "requireLogin": true,
+  "models": [
+    {
+      "name": "MenuItem",
+      "key": "menuItems",
+      "label": "Menu",
+      "singular": "Menu item",
+      "icon": "🍽️",
+      "description": "",
+      "ownedByUser": false,
+      "public": {
+        "list": true,
+        "create": false
+      },
+      "newestFirst": false,
+      "layout": "cards",
+      "notify": false,
+      "submission": false,
+      "showOnHome": true,
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "price",
+          "required": true
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Starter",
+            "Main course",
+            "Dessert",
+            "Drinks"
+          ]
+        },
+        {
+          "name": "vegetarian",
+          "label": "Vegetarian",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "spicy",
+          "label": "Spicy",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "image",
+          "required": false
+        }
+      ],
+      "titleField": "name",
+      "subtitleField": "category",
+      "imageField": "image",
+      "priceField": "price",
+      "payment": null,
+      "loginRequired": false,
+      "prefix": "MEN"
+    },
+    {
+      "name": "Reservation",
+      "key": "reservations",
+      "label": "Book a table",
+      "singular": "Reservation",
+      "icon": "📅",
+      "description": "",
+      "ownedByUser": false,
+      "public": {
+        "list": false,
+        "create": true
+      },
+      "newestFirst": true,
+      "layout": "table",
+      "notify": true,
+      "submission": true,
+      "showOnHome": false,
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "phone",
+          "required": true
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "time",
+          "label": "Time",
+          "type": "time",
+          "required": true
+        },
+        {
+          "name": "guests",
+          "label": "Guests",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "type": "textarea",
+          "required": false
+        }
+      ],
+      "titleField": "name",
+      "subtitleField": null,
+      "imageField": null,
+      "priceField": null,
+      "payment": {
+        "enabled": false,
+        "from": "fixed",
+        "fixed": 0,
+        "label": "Set a fixed amount to collect payments"
+      },
+      "loginRequired": true,
+      "prefix": "RES"
+    }
+  ]
+};
+
+/** Sample data used by preview mode (the real backend has its own copy in backend/data/seed.js). */
+export const SAMPLE = {
+  "MenuItem": [
+    {
+      "name": "Paneer Tikka",
+      "price": 249,
+      "category": "Starter",
+      "vegetarian": true,
+      "spicy": true,
+      "description": "Cottage cheese marinated in spices and grilled in the tandoor."
+    },
+    {
+      "name": "Butter Chicken",
+      "price": 349,
+      "category": "Main course",
+      "vegetarian": false,
+      "description": "Tender chicken in a rich tomato and butter gravy."
+    },
+    {
+      "name": "Dal Makhani",
+      "price": 229,
+      "category": "Main course",
+      "vegetarian": true,
+      "description": "Black lentils slow-cooked overnight with cream."
+    },
+    {
+      "name": "Gulab Jamun",
+      "price": 119,
+      "category": "Dessert",
+      "vegetarian": true,
+      "description": "Soft milk dumplings in warm rose syrup."
+    },
+    {
+      "name": "Masala Chai",
+      "price": 49,
+      "category": "Drinks",
+      "vegetarian": true,
+      "description": "Spiced tea brewed with milk."
+    }
+  ],
+  "Reservation": [
+    {
+      "name": "Name 1",
+      "phone": "+91 98765 43210",
+      "date": "2026-11-13",
+      "time": "10:00",
+      "guests": 3,
+      "notes": "A short description for item 1."
+    },
+    {
+      "name": "Name 2",
+      "phone": "+91 98765 43211",
+      "date": "2026-11-14",
+      "time": "13:30",
+      "guests": 5,
+      "notes": "A short description for item 2."
+    },
+    {
+      "name": "Name 3",
+      "phone": "+91 98765 43212",
+      "date": "2026-11-15",
+      "time": "18:00",
+      "guests": 8,
+      "notes": "A short description for item 3."
+    }
+  ]
+};
